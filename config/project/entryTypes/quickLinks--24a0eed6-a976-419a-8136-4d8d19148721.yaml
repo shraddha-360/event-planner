@@ -1,0 +1,86 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  6dbf3ed6-1324-4876-9387-d48e70e6f0c4:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2026-03-17T07:34:11+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 2a9533f4-9e38-4dda-ab5d-a8bc466daea2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-03-17T07:36:15+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: e3858f93-5653-46d5-a71a-f646810ad77c # Link Text
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 20b43055-638a-44c7-92e1-bade821abe39
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-03-17T07:36:15+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 467a05ba-639a-480e-94de-c709bf1f6c58 # Link
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a86c1f08-0696-4757-b0ce-dde81e8111b5
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 75ae8a59-5d63-4aed-b253-cc3ecec97cbb
+        userCondition: null
+    thumbFieldKey: null
+handle: quickLinks
+hasTitleField: true
+icon: null
+name: 'Quick Links'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

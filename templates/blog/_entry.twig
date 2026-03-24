@@ -1,0 +1,38 @@
+{% extends "_layouts/base.twig" %}
+
+{% block main %}
+
+	<section class="py-16 bg-white">
+
+		<div
+			class="max-w-3xl mx-auto px-4">
+
+			<!-- Title -->
+			<h1 class="text-4xl font-bold mb-4">
+				{{ entry.title }}
+			</h1>
+			<!-- Date -->
+			<p class="text-gray-500 mb-6">
+				{{ entry.postDate|date('d M Y') }}
+			</p>
+			<!-- Image -->
+			{% if entry.featuredImage.one() %}
+				<img src="{{ entry.featuredImage.one().url }}" class="w-full rounded-xl mb-6">
+			{% endif %}
+			<!-- Content -->
+			<div class="prose max-w-none">
+				{{ entry.content }}
+			</div>
+
+			<!-- Back -->
+			<div class="mt-10">
+				<a href="/blog" class="text-blue-600 hover:underline">
+					← Back to Blog
+				</a>
+			</div>
+
+		</div>
+
+	</section>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+<section class="py-5 pb-16 bg-gray-100">
+	<div class="text-center text-brand-dark body-large max-w-full  lg:pr-3 flex flex-col gap-6">
+
+		{% if entry.intro %}
+			<div class="py-10">
+				{{ entry.intro }}
+			</div>
+		{% endif %}
+	</div>
+
+	<div
+		class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10">
+
+		<!-- LEFT: Contact Info -->
+		<div>
+			<h1 class="text-4xl font-bold mb-6">Contact Us</h1>
+
+			<p class="text-gray-600 mb-6">
+				Have questions or want to plan your next event? Get in touch with us.
+			</p>
+
+			<div class="space-y-4 text-gray-700">
+				<p>
+					<strong>Email:</strong>
+					{{footer.email}}</p>
+				<p>
+					<strong>Phone:</strong>
+					{{footer.phone}}</p>
+				<p>
+					<strong>Address:</strong>
+					{{footer.address}}</p>
+			</div>
+		</div>
+
+		<!-- RIGHT: Form -->
+		<div class="bg-white p-8 rounded-2xl shadow">
+
+			<h2 class="text-2xl font-semibold mb-6">
+				Send a Message
+			</h2>
+                      
+                      {% include 'form/contactForm' %}
+		</div>
+
+	</div>
+
+</section>

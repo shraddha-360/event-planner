@@ -1,0 +1,24 @@
+<section 
+class="relative px-20 pt-10 bg-white {% if block.blockImage.one() %} bg-left bg-cover h-[400px]   {% endif %}"
+{% if block.blockImage.one() %}
+style="background-image: url('{{ block.blockImage.one().url }}');"
+{% endif %}
+>
+
+	<div class="container relative z-10 px-10 lg:px-16 py-5">
+
+		{% if block.blockImage.one() %}
+			<div class="absolute inset-0 bg-gray-100/90 -z-10  lg:block"></div>
+		{% endif %}
+
+		<h1 class="text-center text-4xl font-bold mb-4">
+			{{ block.title }}
+		</h1>
+
+		<div class="tracking-[0.025em] max-w-[75ch] mx-auto text-center lg:text-2xl text-[16px]  text-gray-600">
+			{{ block.intro }}
+		</div>
+
+	</div>
+
+</section>    

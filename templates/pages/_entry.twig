@@ -1,0 +1,14 @@
+{% extends "_layouts/base.twig" %}
+
+
+{% block main %}
+
+	<div class="w-full text-center py-7 bg-gray-300 border-b-8 border-gray-[#8fa2c7] px-4 lg:px-0">
+		<h1 class="font-libre text-3xl lg:text-4xl leading-[1.2] mb-0 font-bold">
+			{{ entry.title }}
+		</h1>
+	</div>
+
+	{% include 'pages/_types/' ~ entry.type ignore missing %}
+
+{% endblock %}

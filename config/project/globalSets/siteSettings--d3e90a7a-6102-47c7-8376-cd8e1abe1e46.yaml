@@ -1,0 +1,94 @@
+fieldLayouts:
+  c926b95f-9abc-4bb0-8587-3faecd94e045:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-03-11T05:06:08+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: b27f0fe1-8f50-402a-af6c-43368c49fa7d # Logo
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 33f4314d-5e24-4fc9-babc-e117619e1cb0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-03-11T05:06:08+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 04ec2d82-814b-4e84-af1f-fc05d873e9a4 # Phone
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2eba7636-0c7e-4861-b228-8dd537f27fb6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-03-11T05:06:08+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 1090d13a-4a87-4dc4-a0c5-621c0a0c1171 # Email
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 53b398cc-9b6e-4cab-9012-9466125306fc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-03-11T05:06:08+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 4736aa1b-0415-4435-867c-6698ce86445f # Address
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aa72793f-b3bf-4e24-b064-b42f89dad265
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-03-11T05:06:08+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 39262332-89b3-47b7-a073-2d5a3fb902b1 # Social Links
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1f22a2ab-dc6f-46c4-b762-cdf4d8646967
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b1031d41-0d18-4ca3-96a3-2e21c25eb567
+        userCondition: null
+    thumbFieldKey: null
+handle: siteSettings
+name: 'Site Settings'
+sortOrder: 1

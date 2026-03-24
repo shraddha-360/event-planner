@@ -1,0 +1,50 @@
+defaultPlacement: end
+fieldLayouts:
+  7b72b8ba-64d4-4826-9f6e-1a1086598d35:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2026-03-09T05:07:50+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: 4fc9095d-b482-4405-8b9e-2a5c2d3ce0a9
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e1f85c14-cbb7-451f-a9e0-7ef8adcd2fb0
+        userCondition: null
+    thumbFieldKey: null
+handle: eventCategories
+name: 'Event Categories'
+siteSettings:
+  02cb6fce-2a6c-4250-acfa-7fdc2405c977: # Event Planner
+    hasUrls: true
+    template: event-categories/_category.twig
+    uriFormat: 'event-categories/{slug}'
+structure:
+  maxLevels: null
+  uid: 5c3948f1-f88d-4676-b7e1-dc4ca2662a96

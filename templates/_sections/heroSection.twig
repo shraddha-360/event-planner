@@ -1,0 +1,99 @@
+<!-- HERO SECTION -->
+{# 
+	<section class="relative h-[550px] flex items-center justify-center text-center text-white bg-cover bg-center" style="background-image:url('/images/event-banner.jpg');">
+
+		<div class="absolute inset-0 bg-black/50"></div>
+
+		<div class="relative z-10 max-w-2xl px-4">
+
+			<h1 class="text-5xl font-bold mb-4">
+				{{block.title}}
+			</h1>
+
+			<p class="text-lg mb-6">
+				{{block.subHeading}}
+			</p>
+
+			<a href="/events" class="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-700 font-semibold">
+				{{block.ctaButton}}
+			</a>
+
+		</div>
+
+	</section>
+ #}
+
+	<section
+	x-data="{ current: 0,
+						    slides: [
+						        {
+						            image: '/uploads/slide1.jpg',
+						            title: 'Discover Amazing Events',
+						            desc: 'Explore conferences, workshops and meetups near you'
+						        },
+								  {
+						            image: '/uploads/slide2.jpg',
+						            title: 'Learn from Experts',
+						            desc: 'Join industry leaders and grow your skills'
+						        },
+								  {
+						            image: '/uploads/slide3.jpg',
+						            title: 'Connect and Network',
+						            desc: 'Meet professionals and expand your network'
+						        }
+		
+						    ],
+						    interval: null,
+						    start() {
+						        this.interval = setInterval(() => this.next(), 4000)
+						    },
+						    stop() {
+						        clearInterval(this.interval)
+						    },
+						    next() {
+						        this.current = (this.current + 1) % this.slides.length
+						    },
+						    prev() {
+						        this.current = (this.current - 1 + this.slides.length) % this.slides.length
+						    }
+						}" x-init="start()" @mouseenter="stop()" @mouseleave="start()" class="relative h-[550px] overflow-hidden"> {# Slides Show  #}
+
+	<template x-for="(slide,index) in slides" :key="index">
+
+		<div x-show="current===index" x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0 scale-105" x-transition:enter-end="opacity-100 scale-100" class="absolute inset-0">
+
+			<img :src="slide.image" class="w-full h-full object-cover">
+
+			<div class="absolute inset-0 bg-black/50"></div>
+
+			<div class="absolute inset-0 flex flex-col justify-center items-center px-4 text-center text-white">
+
+				<h1 x-text="slide.title" class="text-5xl font-bold mb-4"></h1>
+				<p class="text-lg mb-6" x-text="slide.desc"></p>
+
+				<a href="/events" class="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-700">
+					Explore Events
+				</a>
+
+
+			</div>
+		</div>
+	</template>
+
+	{# Previous Button  #}
+
+	<button @click="prev()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 p-3 rounded-full hover:bg-white ">←</button>
+
+	{# Next Button  #}
+
+	<button @click="next()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 p-3 rounded-full hover:bg-white ">→</button>
+
+	<!-- Dots -->
+	<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+
+		<template x-for="(slide, index) in slides" :key="index">
+			<button @click="current = index" :class="current === index ? 'bg-white' : 'bg-white/50'" class="w-3 h-3 rounded-full"></button>
+		</template>
+
+	</div>
+</section>

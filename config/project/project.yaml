@@ -1,0 +1,222 @@
+dateModified: 1773987716
+email:
+  fromEmail: event12@gmail.com
+  fromName: 'Event Planner'
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  uploads:
+    hasUrls: true
+    name: uploads
+    settings:
+      path: '@webroot/uploads'
+    type: craft\fs\Local
+    url: '@web/uploads'
+meta:
+  __names__:
+    0a71c1b6-8b54-4a44-a6a1-f72aa44c72f3: 'General Page Content' # General Page Content
+    0ea1feac-1706-4586-9669-3867d3cf0829: Company # Company
+    1a612589-89e1-4158-9c20-f2b899c429fb: 'Event Time' # Event Time
+    1b4c0d05-8a41-446f-a1bf-e7a725d860e9: Blog # Blog
+    1c11ac4e-4445-4d1e-816e-db02f55b0a7c: 'Speakers Listing' # Speakers Listing
+    02cb6fce-2a6c-4250-acfa-7fdc2405c977: 'Event Planner' # Event Planner
+    02e5147a-1d76-448e-9de8-5316beca2d68: 'Platform Name' # Platform Name
+    3b28e4dc-aa10-4c26-9055-3120dce4501f: Header # Header
+    3eb7f664-6492-4ca3-af9f-b788657dfb6b: 'Speaker Image' # Speaker Image
+    04bb09ee-87a2-4e9d-8609-58cc0b39504d: Contact # Contact
+    04ec2d82-814b-4e84-af1f-fc05d873e9a4: Phone # Phone
+    5b8c0011-bacf-40cf-8a83-141a6572601d: 'CTA Link' # CTA Link
+    5c32d54b-b8a8-459f-9c7d-1222cc40b355: 'Gallery Images' # Gallery Images
+    05d1c6a5-bffa-4d6a-a3b0-6d8f8186751f: 'Sticky Header' # Sticky Header
+    5e61637a-7739-4eea-8527-e10f0087be4e: 'Event Organizer' # Event Organizer
+    5fb97d18-0470-4d54-8506-8884a0f58523: 'Event Category' # Event Category
+    7a86c168-cc51-4fbf-9b51-1a7a69537263: About # About
+    7b1c5d85-2a87-482b-aef2-8d3910ba769c: 'Profile URL' # Profile URL
+    7d0ce61b-a9d9-4a41-8b3c-131bca13f660: 'Block Image' # Block Image
+    8bc404fc-2155-465f-8c92-80a52b7e8ff6: 'Event Template' # Event Template
+    08e38708-fb7d-4e42-84ad-0ecd6bfbaebd: 'Speaker Bio' # Speaker Bio
+    8f088ee2-5bad-48c2-9b45-e9f362bc2411: 'Sub Heading' # Sub Heading
+    09d2cce0-b919-4192-be58-01a60195d340: uploads # uploads
+    12d3fccb-5224-4658-b4a9-f85b6bd63058: 'Event Price' # Event Price
+    22a20ffe-6c41-4f64-8bbb-ca988dd0f93a: 'Content Section' # Content Section
+    23af4e77-cee6-47c2-b316-efeba0fba6bc: 'General Page Content' # General Page Content
+    24a0eed6-a976-419a-8136-4d8d19148721: 'Quick Links' # Quick Links
+    47a7b005-4983-4740-b517-fc9daea01a81: 'Blog Listing' # Blog Listing
+    50ff1de3-aa9a-4297-b726-e50247cd46cd: 'Content Card' # Content Card
+    72c195d0-63df-4c59-bcc9-b3b95a00e94f: 'Featured Image' # Featured Image
+    72da3e15-ce8e-4e09-9b4c-db6092893dfa: 'Nav Active Style' # Nav Active Style
+    0091aca5-c05a-4ba4-bfa1-fe515bc03e25: Speakers # Speakers
+    98e51f63-aa8f-4b0e-824c-dfa1a3878a2d: 'Image Gallery' # Image Gallery
+    129c8203-4914-4e39-88f7-347ad935d7e6: Events # Events
+    208aca0c-7788-4911-90e6-4a7ff06f90ef: Footer # Footer
+    467a05ba-639a-480e-94de-c709bf1f6c58: Link # Link
+    497ea90f-18a4-4c93-882c-8b261a0ff26b: 'Content Cards' # Content Cards
+    600c7875-beee-4de8-98f3-53c296bf814c: Information # Information
+    710f1832-f597-40f5-9b74-6eece7753c1f: Speakers # Speakers
+    807f1b2a-4a19-4379-bb34-47eb436174ef: 'Speaker Company' # Speaker Company
+    1090d13a-4a87-4dc4-a0c5-621c0a0c1171: Email # Email
+    1914c9e0-5e16-4f15-b09c-d6488ca8a1db: 'Event Location' # Event Location
+    3111ecab-5eb0-4bb6-abfd-4b8a4d613ef9: 'Quick Links' # Quick Links
+    3692d155-a722-4543-bec7-b169bdbedc59: Intro # Intro
+    4193a514-0cc6-49c1-8c81-701472a139bc: 'Home Page' # Home Page
+    4736aa1b-0415-4435-867c-6698ce86445f: Address # Address
+    37308abe-8f94-4cd1-a8e0-94ebcbf2b4a3: 'CTA Button' # CTA Button
+    78202fc8-9046-4f80-b9e4-10b0f43dc971: 'Publish Date' # Publish Date
+    83156c94-39ff-417c-b217-769f95c3b4e1: Content # Content
+    432568bb-57db-4032-a367-2d84b828df03: Blog # Blog
+    494126af-8078-4b49-8aa2-c1701c811a69: 'Event Planner' # Event Planner
+    818504d0-87b4-42db-837b-00f4d934b137: 'Speaker Name' # Speaker Name
+    39262332-89b3-47b7-a073-2d5a3fb902b1: 'Social Links' # Social Links
+    a2e7a905-b087-4775-8fb8-6d1b42febb23: 'Registration Link' # Registration Link
+    a63bcdbc-ff7b-46e2-a672-ac5e46a04623: 'Blog Categories' # Blog Categories
+    a83e3381-617f-46cf-8e6e-3bf47bb8a538: 'Display Label' # Display Label
+    a292f06a-dc21-4c3d-89c1-be5c9ae33bc4: 'Event Date' # Event Date
+    a4646878-d5f9-476c-95bf-620197f03196: 'Header Nav Items' # Header Nav Items
+    ac403b1e-a33f-46e9-8830-67c96e76c94f: 'Newsletter Text' # Newsletter Text
+    adb74f5e-e1f3-41c1-a9e2-527977557951: 'Blog Category' # Blog Category
+    b6ad0e26-79d0-46ac-8926-312829bbf6f0: Events # Events
+    b27f0fe1-8f50-402a-af6c-43368c49fa7d: Logo # Logo
+    b43aecaa-d89b-4cac-b4fb-de8d626364bb: Pages # Pages
+    b391f9a5-1561-4f5b-ba13-affb9bdf8436: 'Event Categories' # Event Categories
+    bbf7682f-e11b-4b5e-ad9b-385c649dd31f: 'Event Speakers' # Event Speakers
+    c0c332b7-a5c0-43b9-9e26-126f89c33ea0: 'Speakers Listing' # Speakers Listing
+    c8fadc86-cb56-459d-88b0-8451b48885a1: 'Page Builder' # Page Builder
+    c9fff7fa-10fb-4ed3-8216-1540ae44b35a: 'Event Image' # Event Image
+    cb18c834-13db-4604-8be9-b1f99d152b87: Pages # Pages
+    d3e90a7a-6102-47c7-8376-cd8e1abe1e46: 'Site Settings' # Site Settings
+    d64134aa-f0d9-4e93-bf60-10e7dc636151: 'Contact Form' # Contact Form
+    d421484e-ea10-49cc-b94f-ff81baae0494: 'Author Name' # Author Name
+    d4781685-3765-421d-824f-f7f829d04fb1: 'Speaker Social Links' # Speaker Social Links
+    dfd8c83b-bec0-44e8-a20c-8f6971086b53: 'Home Page' # Home Page
+    e6aab4c4-283b-41b2-9f89-744b88f91980: Bio # Bio
+    e8c7c6d0-0895-4cfb-8802-7d5c027c6fbf: 'Header Bg Color ?' # Header Bg Color ?
+    e146a382-0641-464a-8fb7-761e43a3cddb: 'Header Navigation' # Header Navigation
+    e149cff6-633f-4465-9dd4-7d7d016812f6: 'Event Schedule' # Event Schedule
+    e3858f93-5653-46d5-a71a-f646810ad77c: 'Link Text' # Link Text
+    ed6f57d3-06bf-49b6-a88a-5bcda22a7873: SEO # SEO
+    f0a84098-4883-46c3-bb24-e0ca51b1e1f3: 'Gallery Section' # Gallery Section
+    f5e86855-c1c3-4774-89ae-92aa8089ca96: 'Event Description' # Event Description
+    f26d9a72-a2d3-4d4c-be2f-e3ed423b20b7: 'Blog Listing' # Blog Listing
+    f52aa945-2df6-43f4-9b81-889ed40d5642: Author # Author
+    fb220bdf-b955-401a-83ab-6cecca658480: New # New
+    fc3e02fe-4fc6-4fe9-827a-894af5a17ef7: 'Hero Section' # Hero Section
+    fc38da32-dc26-401e-b569-fe0d7ab6f46b: 'Blog Title' # Blog Title
+plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 5.0.0.1
+  formie:
+    edition: standard
+    enabled: true
+    licenseKey: XNP92HSSR0K1W9RDVHZL177B
+    schemaVersion: 3.4.12
+    settings:
+      ajaxTimeout: 10
+      alertEmails: null
+      allowPublicVolumes: true
+      defaultDateDisplayType: calendar
+      defaultDateTime: null
+      defaultDateValueOption: ''
+      defaultEmailTemplate: ''
+      defaultExportFolder: '@storage/formie-export'
+      defaultFileUploadVolume: ''
+      defaultFormTemplate: ''
+      defaultInstructionsPosition: verbb\formie\positions\AboveInput
+      defaultLabelPosition: verbb\formie\positions\AboveInput
+      defaultPage: forms
+      emptyValuePlaceholder: 'No response.'
+      enableBackSubmission: true
+      enableCsrfValidationForGuests: true
+      enableLargeFieldStorage: false
+      enableUnloadWarning: true
+      filterIntegrationMapping: true
+      includeDraftElementUsage: false
+      includeRevisionElementUsage: false
+      maxIncompleteSubmissionAge: 30
+      maxSentNotificationsAge: 30
+      outputConsoleMessages: true
+      pdfPaperOrientation: portrait
+      pdfPaperSize: letter
+      pluginName: Formie
+      queuePriority: null
+      saveSpam: true
+      sendEmailAlerts: false
+      sentNotifications: true
+      setOnlyCurrentPagePayload: false
+      spamBehaviour: showSuccess
+      spamBehaviourMessage: ''
+      spamEmailNotifications: false
+      spamKeywords: ''
+      spamLimit: 500
+      submissionsBehaviour: all
+      useCssLayers: false
+      useQueueForIntegrations: true
+      useQueueForNotifications: true
+      validateCustomTemplates: true
+  freeform:
+    edition: lite
+    enabled: true
+    licenseKey: HM2A37GI9J3OYRBP17IU2KUO
+    schemaVersion: 5.14.3
+  seomatic:
+    edition: standard
+    enabled: true
+    licenseKey: HTOK9QOAGCWFTFL1KYGZNIIV
+    schemaVersion: 3.0.13
+    settings:
+      addHrefLang: true
+      addPaginatedHreflang: true
+      addXDefaultHrefLang: true
+      alwaysIncludeCanonicalUrls: false
+      cpTitlePrefix: ''
+      cspNonce: ''
+      cspScriptSrcPolicies:
+        -
+          __assoc__:
+            -
+              - policy
+              - "'self'"
+      devModeCpTitlePrefix: ''
+      devModeTitlePrefix: ''
+      displayPreviewSidebar: true
+      enableDebugToolbarPanel: true
+      enableJsonLdEndpoint: false
+      enableMetaContainerEndpoint: false
+      enableSeoFileLinkEndpoint: false
+      environment: live
+      excludeNonCanonicalUrls: false
+      generatorEnabled: true
+      headersEnabled: true
+      includeHomepageInBreadcrumbs: true
+      lowercaseCanonicalUrl: true
+      manuallySetEnvironment: false
+      maxDescriptionLength: 155
+      maxTitleLength: 70
+      metaCacheDuration: 0
+      pluginName: SEOmatic
+      renderEnabled: true
+      separatorChar: '|'
+      sidebarDisplayPreviewTypes:
+        - google
+        - twitter
+        - facebook
+      siteGroupsSeparate: true
+      siteUrlOverride: ''
+      sitemapsEnabled: true
+      socialMediaPreviewTarget: true
+      truncateDescriptionTags: true
+      truncateTitleTags: true
+      xDefaultSite: 0
+system:
+  edition: solo
+  live: true
+  name: 'Event Planner'
+  schemaVersion: 5.9.0.8
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true

@@ -1,0 +1,47 @@
+<footer class="bg-gray-900 text-white py-12">
+
+	<div
+		class="max-w-[1200px] mx-auto grid md:grid-cols-4 gap-8 px-4">
+
+		<!-- Logo -->
+		<a href="/" class="text-2xl font-bold text-blue-700 tracking-wide hover:text-blue-800 transition">
+			Plannix
+		</a>
+
+		<!-- Links -->
+		<div>
+			<h1 class="font-semibold mb-4">Quick Links</h1>
+			{% for link in footer.quickLinks.all() %}
+				<a href="{{ link.link }}" class="block hover:text-blue-400">
+					{{ link.linkText }}
+				</a>
+			{% endfor %}
+		</div>
+
+		<!-- Contact -->
+		<div>
+			<h1 class="font-semibold mb-4">Contact</h1>
+			<p>📍
+				{{ footer.address }}</p>
+			<p>📧
+				{{ footer.email }}</p>
+			<p>📞
+				{{ footer.phone }}</p>
+		</div>
+
+		<!-- Newsletter -->
+		<div>
+			<h1 class="font-semibold mb-4">Newsletter</h1>
+			<p>{{ footer.newsletterText }}</p>
+		</div>
+
+	</div>
+
+
+	<div class="text-center mt-8 text-sm text-gray-400">
+		©
+		{{ now|date('Y') }}
+		Event Planner. All rights reserved.
+	</div>
+
+</footer>

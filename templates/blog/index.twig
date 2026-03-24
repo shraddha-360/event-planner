@@ -1,0 +1,88 @@
+{% extends "_layouts/base.twig" %}
+
+{% block main %}
+
+	<section class="py-16 bg-gray-100">
+
+		<div class="max-w-6xl mx-auto px-4">
+
+			<h1 class="text-4xl font-bold text-center mb-12">
+				Our Blog
+			</h1>
+
+			{% set categories = craft.categories().group('blogCategories').all() %}
+
+			{% set catSlug = craft.app.request.getQueryParam('category') %}
+            
+			<div
+				class="flex gap-4 mb-6 cursor-pointer">
+
+				<!-- ALL -->
+
+				<a href="/blog" class="px-4 py-2 rounded
+																		        {{ not catSlug
+																		            ? 'bg-red-500 text-white font-bold'
+																		            : 'bg-gray-200 text-black' }}">
+					All
+				</a>
+
+				<!-- CATEGORY LOOP -->
+
+
+				{% for cat in categories %}
+					<a href="/blog?category={{ cat.slug }}" class="px-4 py-2 rounded
+																					            {{ catSlug == cat.slug
+																					                ? 'bg-red-500 text-white font-bold border-b-2 border-red-500'
+																					                : 'bg-gray-200 text-black hover:bg-gray-300' }}">
+						{{ cat.title }}
+					</a>
+				{% endfor %}
+			</div>
+
+
+			{% set blogsQuery = craft.entries().section('blog') %}
+
+			{% if catSlug %}
+				{% set blogsQuery = blogsQuery.relatedTo({
+        targetElement: craft.categories().slug(catSlug).one(),
+        field: 'blogCategory'
+    }) %}
+			{% endif %}
+
+			{% set blogs = blogsQuery.all() %}
+
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+				{% for post in blogs %}
+					<a href="{{ post.url }}" class="block bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+
+						{% if post.featuredImage.one() %}
+							<img src="{{ post.featuredImage.one().url }}" class="w-full h-48 object-cover">
+						{% endif %}
+
+						<div class="p-5">
+
+							<h2 class="text-xl font-semibold mb-2">
+								{{ post.title }}
+							</h2>
+
+							<p class="text-gray-500 text-sm mb-3">
+								{{ post.postDate|date('d M Y') }}
+							</p>
+
+							<p class="text-gray-600">
+								{{ post.blogTitle }}
+							</p>
+
+						</div>
+
+					</a>
+				{% endfor %}
+
+			</div>
+
+		</div>
+
+	</section>
+
+{% endblock %}

@@ -1,0 +1,138 @@
+fieldLayouts:
+  4b71f6c4-3368-4f53-a7a1-a5860bc6b008:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-03-16T10:45:02+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: b27f0fe1-8f50-402a-af6c-43368c49fa7d # Logo
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e04a141c-dc49-427f-a4f5-4b0c37ad0432
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-03-16T10:45:02+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: e8c7c6d0-0895-4cfb-8802-7d5c027c6fbf # Header Bg Color ?
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d41239d7-5bab-40e6-aef4-fe7f3cb90cab
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-03-16T10:45:02+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 72da3e15-ce8e-4e09-9b4c-db6092893dfa # Nav Active Style
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3574a699-3264-4f59-afbc-26c7bf814969
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b795d0d6-6927-4ca4-8a29-9b303aa9bf2f
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-03-16T10:45:02+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: a4646878-d5f9-476c-95bf-620197f03196 # Header Nav Items
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8e768c59-abce-4caf-a8c6-0c8105db38b3
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Header Navigation'
+        uid: 81978f0b-ee63-4111-9179-4f324cd4cfe6
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-03-16T10:45:02+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 37308abe-8f94-4cd1-a8e0-94ebcbf2b4a3 # CTA Button
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7cda6cb7-fd69-4b73-a579-872a3d8bb0c6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-03-16T10:45:02+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 5b8c0011-bacf-40cf-8a83-141a6572601d # CTA Link
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0c81d0fa-3723-4af4-85ea-03c09b03d75c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-03-16T10:45:02+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 05d1c6a5-bffa-4d6a-a3b0-6d8f8186751f # Sticky Header
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d44b3fb7-1f88-406d-9d2e-94d9af213db3
+            userCondition: null
+            warning: null
+            width: 100
+        name: CTA
+        uid: 61405a49-1d8a-49b1-babe-51bc999f05c1
+        userCondition: null
+    thumbFieldKey: null
+handle: header
+name: Header
+sortOrder: 2

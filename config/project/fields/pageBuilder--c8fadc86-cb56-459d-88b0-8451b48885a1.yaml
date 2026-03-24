@@ -1,0 +1,45 @@
+columnSuffix: null
+handle: pageBuilder
+instructions: null
+name: 'Page Builder'
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - fc3e02fe-4fc6-4fe9-827a-894af5a17ef7 # Hero Section
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 22a20ffe-6c41-4f64-8bbb-ca988dd0f93a # Content Section
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - f0a84098-4883-46c3-bb24-e0ca51b1e1f3 # Gallery Section
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

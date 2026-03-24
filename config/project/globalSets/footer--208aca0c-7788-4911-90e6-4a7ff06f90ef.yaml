@@ -1,0 +1,106 @@
+fieldLayouts:
+  af087b6c-eee8-44f7-887f-bae071c1a4d6:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-03-17T07:39:33+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 3111ecab-5eb0-4bb6-abfd-4b8a4d613ef9 # Quick Links
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e6e253e2-1c6f-4de7-9d21-5fa233dc1c99
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Footer Navigation'
+        uid: cd43618c-9c70-4101-9bc7-0074238d97bf
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-03-17T07:39:33+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 4736aa1b-0415-4435-867c-6698ce86445f # Address
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a44c0d3e-af83-477d-aea8-2520fc26aed6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-03-17T07:39:33+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 1090d13a-4a87-4dc4-a0c5-621c0a0c1171 # Email
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 224bef42-0cb1-4df0-bd86-2cd0491acba1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-03-17T07:39:33+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 04ec2d82-814b-4e84-af1f-fc05d873e9a4 # Phone
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4ce622a2-6cfa-4790-ac48-ef6c514ddd36
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Contact Info'
+        uid: 4dd09c61-9c80-4bad-bd13-887142f45361
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-03-17T07:39:33+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ac403b1e-a33f-46e9-8830-67c96e76c94f # Newsletter Text
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ec517c23-51b0-4c8f-8646-13bf991e0193
+            userCondition: null
+            warning: null
+            width: 100
+        name: NewsLetter
+        uid: ad4f8d8f-b94f-4485-8def-7b37a4889871
+        userCondition: null
+    thumbFieldKey: null
+handle: footer
+name: Footer
+sortOrder: 3

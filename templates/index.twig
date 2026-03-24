@@ -1,0 +1,160 @@
+{% extends "_layouts/base" %}
+
+{% block main %}
+
+	{% for block in entry.pageBuilder.all() %}
+		{% if block.type.handle == 'heroSection' %}
+			{% include "_sections/heroSection" %}
+		{% endif %}
+	{% endfor %}
+
+	<!-- UPCOMING EVENTS -->
+
+	{# Fetch Data from Craft CMS  #}
+
+	<section>
+		<div>
+			<div class="mx-auto py-16">
+				<h1 class="text-center text-4xl font-bold">
+					UPCOMING EVENTS
+				</h2>
+			</div>
+
+			{% set parents = craft.entries().section('events').level(2).all() %}
+			{% set parentSlug = craft.app.request.getQueryParam("parent") %}
+
+
+			<div
+				class="max-w-6xl mx-auto py-10 px-4">
+
+				{# Parents Tab  #}
+
+				<div
+					class="flex flex-wrap gap-6 mb-10 border-b pb-3">
+
+					<!-- ALL -->
+					<a href="{{ entry.url }}?parent=all" class="{{ parentSlug == 'all' or not parentSlug ? 'text-red-500 font-bold border-b-2 border-red-500' : 'text-gray-500' }}">
+						ALL
+					</a>
+
+					{% for parent in parents %}
+						<a href="{{ entry.url }}?parent={{ parent.slug }}" class="{{ parentSlug == parent.slug ? 'text-red-500 font-bold border-b-2 border-red-500' : 'text-gray-500' }}">
+							{{ parent.title }}
+						</a>
+					{% endfor %}
+
+				</div>
+
+				{# =========================
+																												           EVENTS QUERY
+																												        ========================= #}
+
+				{% set eventsQuery = craft.entries().section('events').level(3).limit(4) %}
+
+				{# FILTER BY PARENT #}
+				{% if parentSlug and parentSlug != 'all' %}
+					{% set parentEntry = craft.entries().section('events').slug(parentSlug).one() %}
+					{% if parentEntry %}
+						{% set eventsQuery = eventsQuery.descendantOf(parentEntry) %}
+					{% endif %}
+				{% endif %}
+
+
+				{# =========================
+																												           EVENTS Show
+																												        ========================= #}
+
+				{# =========================
+																												           PAGINATION
+																												        ========================= #}
+
+				{% paginate eventsQuery as pageInfo, events %}
+
+					<div class="grid md:grid-cols-2 gap-8">
+						{% for event in events %}
+
+							<div class="flex gap-4 bg-white rounded-xl shadow-sm p-4 hover:shadow-md hover:bg-orange-100 transition">
+								{% set img = event.eventImage.one() %}
+								{% if img %}
+									<img src="{{img.url}}" class="w-32 h-32 object-cover rounded-lg bg-gray-100">
+								{% endif %}
+								<div class="flex flex-col justify-between">
+
+									<div>
+										<h3 class="text-lg font-bold">{{event.title}}</h3>
+										<p class="text-black font-semibold ">
+											{{ event.eventDate|date('d M Y') }}
+											at
+											<span>{{event.eventTime}}</span>
+											in
+											<span>{{event.eventLocation}}</span>
+										</p>
+										<p class="text-red-500 font-semibold mt-2">
+											Tickets Price :
+											<span>{{event.eventPrice}}</span>
+										</p>
+
+
+									</div>
+									<a href="{{event.url}}" class="mt-3 bg-blue-300 text-white w-32 font-bold inline-block border px-4 py-2 rounded hover:bg-blue-200 text-sm">
+										View More
+									</a>
+
+
+								</div>
+
+
+							</div>
+
+						{% endfor %}
+					</div>
+
+					{# =========================																			       EMPTY STATE
+																																																																													    ========================= #}
+					{% if events|length == 0 %}
+						<div class="text-center text-gray-500 mt-10">
+							No events found 😔
+						</div>
+					{% endif %}
+				</div>
+
+				{# =========================
+																					           PAGINATION BUTTONS
+																					        ========================= #}
+
+				<div class="flex justify-center gap-4 mt-10 mb-10">
+
+					{% if pageInfo.prevUrl %}
+						<a href="{{ pageInfo.prevUrl }}" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">
+							← Prev
+						</a>
+					{% endif %}
+
+					{% if pageInfo.nextUrl %}
+						<a href="{{ pageInfo.nextUrl }}" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">
+							Next →
+						</a>
+					{% endif %}
+
+				</div>
+
+
+			</div>
+		</section>
+
+
+		{% for block in entry.pageBuilder.all() %}
+			{% if block.type.handle == 'contentSection' %}
+				{% include "_sections/contentSection" %}
+			{% endif %}
+		{% endfor %}
+
+
+		{% for block in entry.pageBuilder.all() %}
+			{% if block.type.handle == 'gallerySection' %}
+				{% include "_sections/gallerySection" %}
+			{% endif %}
+		{% endfor %}
+
+
+	{% endblock %}

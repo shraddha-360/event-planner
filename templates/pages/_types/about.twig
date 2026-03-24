@@ -1,0 +1,4 @@
+{% for block in entry.generalPageContent.all() %}
+    {% include 'pages/_sections/'~ block.type ignore missing %}
+{% endfor %}
+

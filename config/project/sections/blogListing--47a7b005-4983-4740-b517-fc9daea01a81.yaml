@@ -1,0 +1,21 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: f26d9a72-a2d3-4d4c-be2f-e3ed423b20b7 # Blog Listing
+handle: blogListing
+maxAuthors: 1
+name: 'Blog Listing'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  02cb6fce-2a6c-4250-acfa-7fdc2405c977: # Event Planner
+    enabledByDefault: true
+    hasUrls: true
+    template: blog/index.twig
+    uriFormat: blog
+type: single

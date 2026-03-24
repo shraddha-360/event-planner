@@ -1,0 +1,92 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  611faf45-79c2-41d0-ac82-de1fc8d0ee72:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2026-03-16T11:24:16+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 16c893f9-2918-4186-abee-8f23e165b88c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-03-16T11:33:09+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: c8fadc86-cb56-459d-88b0-8451b48885a1 # Page Builder
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: acc28d21-6dbe-4c03-8667-62ff2f3f4656
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: bcd6413e-739a-4bc0-883a-242c73963977
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-03-19T05:33:34+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ed6f57d3-06bf-49b6-a88a-5bcda22a7873 # SEO
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 60d7749c-3280-496d-8043-4ace740ac516
+            userCondition: null
+            warning: null
+            width: 100
+        name: SEO
+        uid: 970a24e4-aef1-4069-b34a-ad277e3d0b67
+        userCondition: null
+    thumbFieldKey: null
+handle: homePage
+hasTitleField: true
+icon: null
+name: 'Home Page'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

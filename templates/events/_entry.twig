@@ -1,0 +1,399 @@
+{% extends "_layouts/base.twig" %}
+
+{% block main %}
+
+	{# PARENT LANDING PAGE  #}
+
+
+	{% if entry.level == 1 %}
+
+		{% set children = entry.children.all() %}
+
+		{% if children |length %}
+
+			<section class="py-16 bg-gray-100">
+
+				<div class="max-w-[1200px] mx-auto px-4">
+
+					<h1 class="text-4xl font-bold text-center mb-12">
+						All Events
+					</h1>
+
+					<div class="grid md:grid-cols-2 gap-8">
+
+						{% for child in children %}
+
+							<div class="bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition">
+
+								{% set image = child.eventImage.one() %}
+
+								{% if image %}
+									<img src="{{ image.url }}" class="w-full h-52 object-cover">
+								{% endif %}
+
+								<div class="p-6">
+
+									<h2 class="text-xl font-semibold mb-2">
+										{{ child.title }}
+									</h2>
+
+									<p class="text-gray-500 mb-2">
+										📅
+										{{ child.eventDate|date("d M Y") }}
+									</p>
+
+									<p class="text-gray-500 mb-4">
+										📍
+										{{ child.eventLocation }}
+									</p>
+
+									<a href="{{ child.url }}" class="text-blue-600 font-medium hover:underline">
+										View Details →
+									</a>
+
+								</div>
+
+							</div>
+
+						{% endfor %}
+
+					</div>
+
+
+				</div>
+
+			</section>
+
+
+		{% endif %}
+	{% endif %}
+
+	{# CHILDREN LANDING PAGE  #}
+
+	{% if entry.level == 2 %}
+
+
+		{# {% set events = entry.children.all() %} #}
+
+		{% set searchQuery = craft.app.request.getParam('q') %}
+
+		{% set eventsQuery = entry.children %}
+
+		{% if searchQuery %}
+
+			{% set eventsQuery = eventsQuery.search(searchQuery) %}
+
+		{% endif %}
+
+
+		{% set events = eventsQuery.all() %}
+
+		{% if events |length %}
+
+			<section class="py-16 bg-gray-100">
+
+				<div class="max-w-[1200px] mx-auto px-4">
+
+					<h1 class="text-4xl font-bold text-center mb-12">
+						{{ entry.title }}
+					</h1>
+					<div class="flex justify-center items-center">
+
+						<form method="get" class="mb-8">
+							<input type="text" name="q" value="{{ craft.app.request.getParam('q') }}" placeholder="Search..." class="border border-blue-400 p-3 w-full rounded-xl">
+						</form>
+					</div>
+					<div class="grid md:grid-cols-2 gap-8">
+
+						{% for event in events %}
+
+							<div class="bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition">
+
+								{% set image = event.eventImage.one() %}
+
+								{% if image %}
+									<img src="{{ image.url }}" class="w-full h-52 object-cover">
+								{% endif %}
+
+								<div class="p-6">
+
+									<h2 class="text-xl font-semibold mb-2">
+										{{ event.title }}
+									</h2>
+
+									<p class="text-gray-500 mb-2">
+										📅
+										{{ event.eventDate|date("d M Y") }}
+									</p>
+
+									<p class="text-gray-500 mb-4">
+										📍
+										{{ event.eventLocation }}
+									</p>
+
+									<a href="{{ event.url }}" class="text-blue-600 font-medium hover:underline">
+										View Details →
+									</a>
+
+								</div>
+
+							</div>
+
+						{% endfor %}
+
+					</div>
+
+				</div>
+
+			</section>
+
+		{% else %}
+
+			<p class="text-center text-gray-500 mt-10 text-lg">
+				No results found 😔
+			</p>
+		{% endif %}
+	{% endif %}
+
+	{# Detail Page  #}
+
+	{% if entry.level ==3 %}
+
+		<section
+			class="bg-gray-100 pb-16">
+
+			<!-- ================= HERO / BANNER ================= -->
+
+			{% set image = entry.eventImage.one() %}
+
+			<section class="relative h-[400px] flex items-center justify-center text-white">
+
+				{% if image %}
+					<img src="{{ image.url }}" class="absolute inset-0 w-full h-full object-cover">
+				{% endif %}
+
+				<div class="absolute inset-0 bg-black/60"></div>
+
+				<div class="relative z-10 text-center px-4">
+					<h1 class="text-4xl md:text-5xl font-bold mb-4">
+						{{ entry.title }}
+					</h1>
+
+					<p class="text-lg">
+						{{ entry.eventDate|date("d M Y") }}
+						•
+						{{ entry.eventLocation }}
+					</p>
+				</div>
+
+			</section>
+
+
+			<!-- ================= EVENT INFO CARDS ================= -->
+
+			<section class="max-w-[1100px] mx-auto px-4 -mt-12">
+
+				<div class="grid md:grid-cols-4 gap-6">
+
+					<div class="bg-white p-6 rounded-xl shadow text-center">
+						<p class="text-gray-500">📅 Date</p>
+						<p class="font-semibold">{{ entry.eventDate|date("d M Y") }}</p>
+					</div>
+
+					<div class="bg-white p-6 rounded-xl shadow text-center">
+						<p class="text-gray-500">⏰ Time</p>
+						<p class="font-semibold">{{ entry.eventTime }}</p>
+					</div>
+
+					<div class="bg-white p-6 rounded-xl shadow text-center">
+						<p class="text-gray-500">📍 Location</p>
+						<p class="font-semibold">{{ entry.eventLocation }}</p>
+					</div>
+
+					<div class="bg-white p-6 rounded-xl shadow text-center">
+						<p class="text-gray-500">👤 Organizer</p>
+						<p class="font-semibold">{{ entry.eventOrganizer }}</p>
+					</div>
+
+				</div>
+
+			</section>
+
+
+			<!-- ================= DESCRIPTION ================= -->
+
+			<section class="max-w-[900px] mx-auto px-4 mt-12">
+
+				<div class="bg-white p-8 rounded-xl shadow">
+
+					<h2 class="text-2xl font-semibold mb-4">
+						About This Event
+					</h2>
+
+					<div class="prose max-w-none">
+						{{ entry.eventDescription }}
+					</div>
+
+				</div>
+
+			</section>
+
+
+			<!-- ================= SPEAKERS ================= -->
+
+			{% set speakers = entry.eventSpeakers.all() %}
+
+			{% if speakers|length %}
+
+				<section class="max-w-[1100px] mx-auto px-4 mt-16">
+
+					<h2 class="text-3xl font-bold text-center mb-10">
+						Event Speakers
+					</h2>
+
+					<div class="grid md:grid-cols-3 gap-8">
+
+						{% for speaker in speakers %}
+
+							<div class="bg-white p-6 rounded-xl shadow text-center">
+
+								{% set image = speaker.speakerImage.one() %}
+
+								{% if image %}
+									<img src="{{ image.url }}" class="w-24 h-24 rounded-full mx-auto object-cover mb-4">
+								{% endif %}
+
+								<h3 class="font-semibold text-lg">
+									{{ speaker.title }}
+								</h3>
+
+								<p class="text-gray-500">
+									{{ speaker.speakerCompany }}
+								</p>
+
+							</div>
+
+						{% endfor %}
+
+					</div>
+
+				</section>
+
+			{% endif %}
+
+			{# Event Schedule  #}
+
+			{% if entry.eventSchedule|length %}
+
+				{% set rowColorOne = "bg-gray-400/40" %}
+				{% set rowColorTwo = "bg-gray-300/40" %}
+				{% set hoverColor = "hover:bg-blue-200/40" %}
+
+				<section class="mt-12">
+
+					<h2 class="text-2xl font-bold text-center mb-6">
+						Event Schedule
+					</h2>
+
+					<div
+						class="max-w-[900px] mx-auto rounded-lg overflow-hidden">
+
+						<!-- Header -->
+						<div class="hidden md:flex bg-gray-800 text-white px-6 py-4 uppercase text-sm">
+							<div class="w-1/4">Time</div>
+							<div class="w-1/2">Session</div>
+							<div class="w-1/4">Speaker</div>
+						</div>
+
+						<!-- Rows -->
+						<div class="flex flex-col">
+
+							{% for row in entry.eventSchedule %}
+
+								<div
+									class="flex flex-col md:flex-row px-6 py-4 transition {{ hoverColor }}
+																																																																																										                    {% if loop.index is even %} {{ rowColorTwo }} {% else %} {{ rowColorOne }} {% endif %}">
+
+									<!-- Time -->
+									<div class="md:w-1/4 font-semibold">
+										<span class="md:hidden text-gray-500">Time:
+										</span>
+										{{ row.time }}
+									</div>
+
+									<!-- Session -->
+									<div class="md:w-1/2">
+										<span class="md:hidden text-gray-500">Session:
+										</span>
+										{{ row.session }}
+									</div>
+
+									<!-- Speaker -->
+									<div class="md:w-1/4">
+										<span class="md:hidden text-gray-500">Speaker:
+										</span>
+										{{ row.speaker }}
+									</div>
+
+								</div>
+
+							{% endfor %}
+
+						</div>
+
+					</div>
+
+				</section>
+
+			{% endif %}
+
+
+			<!-- ================= GALLERY ================= -->
+
+			{% set gallery = entry.galleryImages.all() %}
+
+			{% if gallery|length %}
+
+				<section class="max-w-[1100px] mx-auto px-4 mt-16">
+
+					<h2 class="text-3xl font-bold text-center mb-10">
+						Event Gallery
+					</h2>
+
+					<div class="grid md:grid-cols-3 gap-6">
+
+						{% for img in gallery %}
+							<img src="{{ img.url }}" class="rounded-xl h-56 w-full object-cover hover:scale-105 transition">
+						{% endfor %}
+
+					</div>
+
+				</section>
+
+			{% endif %}
+
+
+			<!-- ================= REGISTER BUTTON ================= -->
+
+			<section class="text-center mt-16" x-data="{register:false}">
+
+				<button @click="register = true" class="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 shadow-lg">
+					Register Now
+				</button>
+
+				<div x-show="register" x-transition @click.self="register = false" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+
+					{% include 'form/eventRegistration' %}
+
+				</div>
+
+			</section>
+
+
+		</section>
+
+
+	{% endif %}
+
+
+{% endblock %}

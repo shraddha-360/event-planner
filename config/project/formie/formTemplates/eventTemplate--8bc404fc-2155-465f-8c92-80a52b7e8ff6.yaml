@@ -1,0 +1,11 @@
+handle: eventTemplate
+name: 'Event Template'
+outputCssLayout: true
+outputCssLocation: page-header
+outputCssTheme: true
+outputJsBase: true
+outputJsLocation: page-footer
+outputJsTheme: true
+sortOrder: null
+template: _forms
+useCustomTemplates: true

@@ -1,0 +1,21 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: c0c332b7-a5c0-43b9-9e26-126f89c33ea0 # Speakers Listing
+handle: speakersListing
+maxAuthors: 1
+name: 'Speakers Listing'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  02cb6fce-2a6c-4250-acfa-7fdc2405c977: # Event Planner
+    enabledByDefault: true
+    hasUrls: true
+    template: speakers\index.twig
+    uriFormat: speakers
+type: single

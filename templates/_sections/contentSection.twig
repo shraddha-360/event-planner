@@ -1,0 +1,26 @@
+<section class="bg-gray-200">
+	<div class="max-w-6xl mx-auto p-5 py-12">
+		<div class="text-center font-bold text-5xl py-12">{{block.title}}
+		</div>
+		<div class="grid md:grid-cols-4 gap-6">
+			{% for card in block.contentCards.all() %}
+				<div class="bg-white p-6 rounded-lg text-center shadow">
+					<div class="flex justify-center mb-4">
+						<div class="p-4 bg-red-500 rounded-full flex items-center justify-center text-white">
+							<i class="fa-solid fa-calendar"></i>
+						</div>
+					</div>
+					<h1 class="font-bold border-b border-red-500 mb-2 pb-2">
+						{{ card.title }}
+					</h1>
+					<p class="mb-2">
+						{{ card.subHeading }}
+					</p>
+					<a href="#" class="mt-3 inline-block bg-blue-300 text-white px-4 py-2 rounded hover:bg-blue-200 text-sm">
+						{{ card.ctaButton }}
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

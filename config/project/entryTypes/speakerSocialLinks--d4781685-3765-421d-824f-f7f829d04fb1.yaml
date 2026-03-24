@@ -1,0 +1,86 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  a0e76c1f-d3b1-44f9-90ec-517d381b30db:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2026-03-06T08:14:17+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 6abca1a5-cd84-4939-866a-71fff737928f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-03-06T08:16:19+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 02e5147a-1d76-448e-9de8-5316beca2d68 # Platform Name
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ee9b0e8b-4efa-419c-a91e-153bd153b5b5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-03-06T08:16:19+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7b1c5d85-2a87-482b-aef2-8d3910ba769c # Profile URL
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3aab2b2f-c293-4228-92b0-49626af96f95
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: c8848b6d-3317-47f4-8886-c016c7e2c59f
+        userCondition: null
+    thumbFieldKey: null
+handle: speakerSocialLinks
+hasTitleField: true
+icon: null
+name: 'Speaker Social Links'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

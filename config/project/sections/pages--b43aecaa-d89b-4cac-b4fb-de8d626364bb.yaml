@@ -1,0 +1,23 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 7a86c168-cc51-4fbf-9b51-1a7a69537263 # About
+  -
+    uid: 04bb09ee-87a2-4e9d-8609-58cc0b39504d # Contact
+handle: pages
+maxAuthors: 1
+name: Pages
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  02cb6fce-2a6c-4250-acfa-7fdc2405c977: # Event Planner
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/_entry.twig
+    uriFormat: '{slug}'
+type: channel

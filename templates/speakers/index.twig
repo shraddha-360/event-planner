@@ -1,0 +1,54 @@
+{% extends "_layouts/base.twig" %}
+
+{% block main %}
+
+	<section>
+		<div class="w-full text-center font-bold">
+			<h1 class="text-4xl font-bold text-center mb-12 mt-12">
+				Speakers
+			</h1>
+		</div>
+
+		<section>
+
+			{% set speakers = craft.entries()
+  .section('speakers')
+  .limit(4)
+  .orderBy('postDate DESC') %}
+
+			<section class="max-w-700 mx-auto flex items-center justify-center">
+
+				{% paginate speakers as pageInfo, posts %}
+
+					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mb-12 ">
+
+						{% for speaker in posts %}
+							<a href="{{ speaker.url }}" class="block bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
+
+								{% if speaker.speakerImage.one() %}
+									<img src="{{ speaker.speakerImage.one().url }}" class="w-full h-60 object-cover rounded-lg mb-4">
+								{% endif %}
+
+								<h3 class="text-xl font-bold">{{ speaker.title }}</h3>
+								<p class="text-gray-500">{{ speaker.speakerBio }}</p>
+
+							</a>
+						{% endfor %}
+
+					</div>
+
+				</section>
+
+				<div class="flex justify-center mt-10 gap-4">
+
+					{% if pageInfo.getPrevUrl() %}
+						<a href="{{ pageInfo.getPrevUrl() }}" class="border-gray-200 bg-gray-200 rounded-xl p-2 px-3">Prev</a>
+					{% endif %}
+
+					{% if pageInfo.getNextUrl() %}
+						<a href="{{ pageInfo.getNextUrl() }}" class="border-gray-200 bg-gray-200 rounded-xl p-2 px-3">Next</a>
+					{% endif %}
+
+				</div>
+
+			{% endblock %}

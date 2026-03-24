@@ -1,0 +1,140 @@
+{% apply spaceless %}
+
+{% formtag 'formWrapper' %}
+    {% set showForm = form.isAvailable() %}
+    {% set currentPage = form.getCurrentPage() %}
+    {% set errors = submission.getErrors('form') ?? null %}
+
+    {% set submitted = craft.formie.plugin.service.getFlash(form.id, 'submitted') %}
+    {% set flashNotice = craft.formie.plugin.service.getFlash(form.id, 'notice') %}
+    {% set flashError = craft.formie.plugin.service.getFlash(form.id, 'error') %}
+
+    <div class="max-w-4xl mx-auto my-10 bg-gray-200 shadow-xl rounded-2xl p-6 md:p-10 border border-gray-100">
+
+        {# Success / Error Messages #}
+        {% if submission is defined and form.settings.submitAction == 'message' %}
+            {% if flashNotice %}
+                <div class="mb-4 p-4 rounded-lg bg-green-100 text-green-800">
+                    {{ formieInclude('_includes/alert-success') }}
+                </div>
+            {% endif %}
+
+            {% if flashError %}
+                <div class="mb-4 p-4 rounded-lg bg-red-100 text-red-800">
+                    {{ formieInclude('_includes/alert-error') }}
+                </div>
+            {% endif %}
+        {% endif %}
+
+        {{ formieInclude('_includes/messages') }}
+
+        {% if submitted and form.settings.submitAction == 'message' and form.settings.submitActionFormHide %}
+            {% set showForm = false %}
+        {% endif %}
+
+        {% if showForm %}
+            {% formtag 'form' %}
+                {{ csrfInput({ autocomplete: 'off' }) }}
+                {{ actionInput(form.getActionUrl()) }}
+                {{ hiddenInput('submitAction', 'submit') }}
+                {{ hiddenInput('handle', form.handle) }}
+                {{ hiddenInput('siteId', craft.app.sites.currentSite.id) }}
+
+                {% if form.getSessionKey() %}
+                    {{ hiddenInput('sessionKey', form.getSessionKey()) }}
+                {% endif %}
+
+                {% if form.getRelations() %}
+                    {{ hiddenInput('relations', form.getRelations()) }}
+                {% endif %}
+
+                {% if form.getPopulatedFieldValues() %}
+                    {{ hiddenInput('extraFields', form.getPopulatedFieldValues()) }}
+                {% endif %}
+
+                {% if submission and submission.id %}
+                    {{ hiddenInput('submissionId', submission.id) }}
+                    {{ hiddenInput('submissionUid', submission.uid) }}
+                {% endif %}
+
+                {% if form.isEditingSubmission() %}
+                    {{ hiddenInput('editingSubmission', true) }}
+                {% endif %}
+
+                {% if form.getStorageBehaviour() != 'session' %}
+                    {{ hiddenInput('storage', form.getStorageBehaviour()) }}
+                    {{ hiddenInput('pageIndex', form.getCurrentPageIndex()) }}
+                {% endif %}
+
+                {% if form.getRedirectUrl() %}
+                    {{ redirectInput(form.getRedirectUrl()) }}
+                {% endif %}
+
+                {% set customInputs = renderOptions.customInputs ?? {} %}
+                {% for inputName, inputValue in customInputs %}
+                    {{ hiddenInput(inputName, inputValue) }}
+                {% endfor %}
+
+                {% formtag 'formContainer' %}
+
+                    {% hook 'formie.form.start' %}
+
+                    {# Title #}
+                    {% if form.settings.displayFormTitle %}
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">
+                            {{ form.title }}
+                        </h2>
+                    {% endif %}
+
+                    {# Progress Bar #}
+                    {% if form.settings.progressPosition == 'start' %}
+                        <div class="mb-6">
+                            {{ formieInclude('_includes/progress') }}
+                        </div>
+                    {% endif %}
+
+                    {# Errors #}
+                    {% if errors %}
+                        <div class="mb-4 p-4 bg-red-100 text-red-700 rounded-lg">
+                            {{ formieInclude('_includes/form-errors') }}
+                        </div>
+                    {% endif %}
+
+                    {{ formieInclude('_includes/page-tabs') }}
+
+                    {# Form Fields #}
+                    <div class="space-y-6">
+                        {% for page in form.getPages() %}
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {{ craft.formie.renderPage(form, page, renderOptions) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    {# Progress End #}
+                    {% if form.settings.progressPosition == 'end' %}
+                        <div class="mt-6">
+                            {{ formieInclude('_includes/progress') }}
+                        </div>
+                    {% endif %}
+
+                    {% hook 'formie.form.end' %}
+
+                {% endformtag %}
+            {% endformtag %}
+        {% endif %}
+
+    </div>
+
+    {# Bottom success message #}
+    {% if submission is defined and form.settings.submitAction == 'message' and form.settings.submitActionFormHide %}
+        {% if flashNotice %}
+            <div class="max-w-3xl mx-auto mt-6 p-4 bg-green-100 text-green-800 rounded-lg text-center">
+                {{ formieInclude('_includes/alert-success') }}
+            </div>
+        {% endif %}
+    {% endif %}
+
+{% endformtag %}
+
+{% endapply %}

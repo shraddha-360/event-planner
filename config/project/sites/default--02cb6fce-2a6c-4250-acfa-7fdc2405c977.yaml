@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en
+name: 'Event Planner'
+primary: true
+siteGroup: 494126af-8078-4b49-8aa2-c1701c811a69 # Event Planner
+sortOrder: 1

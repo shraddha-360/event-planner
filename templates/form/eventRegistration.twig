@@ -1,0 +1,83 @@
+{% set form = craft.formie.forms.handle('eventRegister').one() %}
+{% do form.setSettings({ enableJsEvents: true }) %}
+{% do craft.formie.registerAssets(form) %}
+
+<div class="bg-white w-full max-w-lg p-8 rounded-2xl shadow-xl">
+
+	<h2 class="text-2xl font-bold mb-6 text-center">
+		Register for this Event
+	</h2>
+
+	<form method="post" data-fui-form="{{ form.configJson }}">
+		{{ csrfInput() }}
+		{{ actionInput('formie/submissions/submit') }}
+		{{ hiddenInput('handle', form.handle) }}
+		<div
+			class="max-w-4xl mx-auto bg-white shadow-lg rounded-2xl p-6 md:p-10 space-y-8">
+			<!-- NAME -->
+			<div class="grid md:grid-cols-3 gap-4 items-start">
+				<h3 class="font-semibold text-gray-700">
+					Name
+					<span class="text-red-500">*</span>
+				</h3>
+				<div class="md:col-span-2">
+					{{ craft.formie.renderField(form, 'name') }}
+				</div>
+			</div>
+
+			<!-- CONTACT -->
+			<div class="grid md:grid-cols-3 gap-4 items-start">
+				<h3 class="font-semibold text-gray-700">Contact Details</h3>
+
+				<div class="md:col-span-2 grid md:grid-cols-2 gap-4">
+					{{ craft.formie.renderField(form, 'email') }}
+					{{ craft.formie.renderField(form, 'phone') }}
+				</div>
+			</div>
+
+			<!-- OTHER INFO -->
+			<div class="grid md:grid-cols-3 gap-4 items-start">
+				<h3 class="font-semibold text-gray-700">
+					Other Information
+					<span class="text-red-500">*</span>
+				</h3>
+
+				<div class="md:col-span-2 grid md:grid-cols-2 gap-4">
+					{{ craft.formie.renderField(form, 'dateofEvent') }}
+					{{ craft.formie.renderField(form, 'gender') }}
+				</div>
+			</div>
+
+			<!-- SOURCE -->
+			<div class="grid md:grid-cols-3 gap-4 items-start">
+				<h3 class="font-semibold text-gray-700">
+					How did you hear about us?
+				</h3>
+
+				<div class="md:col-span-2">
+					{{ craft.formie.renderField(form, 'source') }}
+				</div>
+			</div>
+
+			<!-- COMMENTS -->
+			<div class="grid md:grid-cols-3 gap-4 items-start">
+				<h3 class="font-semibold text-gray-700">
+					Questions / Comments
+				</h3>
+
+				<div class="md:col-span-2">
+					{{ craft.formie.renderField(form, 'questionsComments') }}
+				</div>
+			</div>
+
+			<!-- BUTTON -->
+			<div class="text-right pt-4">
+				<button type="submit" class="bg-blue-600 hover:bg-blue-700 transition-all duration-300 text-white px-8 py-3 rounded-lg font-medium shadow-md hover:shadow-lg">
+					Submit
+				</button>
+			</div>
+
+		</div>
+	</form>
+
+</div>
