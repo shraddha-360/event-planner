@@ -11,7 +11,6 @@
 	<!-- UPCOMING EVENTS -->
 
 	{# Fetch Data from Craft CMS  #}
-
 	<section>
 		<div>
 			<div class="mx-auto py-16">
@@ -22,7 +21,6 @@
 
 			{% set parents = craft.entries().section('events').level(2).all() %}
 			{% set parentSlug = craft.app.request.getQueryParam("parent") %}
-
 
 			<div
 				class="max-w-6xl mx-auto py-10 px-4">
@@ -59,6 +57,9 @@
 					{% endif %}
 				{% endif %}
 
+
+                          
+			 
 
 				{# =========================
 																												           EVENTS Show
