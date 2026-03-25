@@ -18,7 +18,6 @@
 					UPCOMING EVENTS
 				</h2>
 			</div>
-
 			{% set parents = craft.entries().section('events').level(2).all() %}
 			{% set parentSlug = craft.app.request.getQueryParam("parent") %}
 

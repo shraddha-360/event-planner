@@ -3,7 +3,7 @@
 	{% set linkUrl = item.navLink ? item.navLink.getUrl() : null %}
 
 	<a href="{{ linkUrl ?? '#' }}" class="text-gray-700 font-medium hover:text-blue-600 transition duration-200
-			       {{ craft.app.request.absoluteUrl == linkUrl ? 'text-blue-600 font-semibold border-b-2 border-blue-600 pb-1' : '' }}">
+			       {{ craft.app.request.absoluteUrl == linkUrl ? 'text-blue-600 font-bold border-b-2 border-blue-600 pb-1' : '' }}">
 
 		{{ item.navTitle }}
 	</a>
